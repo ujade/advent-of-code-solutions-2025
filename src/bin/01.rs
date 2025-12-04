@@ -66,8 +66,10 @@ impl CircleIterator {
     // }
 
     fn rotate(&mut self, steps: usize, left: bool) -> u64 {
-        let mut crossings = 0u64;
 
+        let mut crossings = 0;
+
+        // left = true, right = false
         let rotation_angle = if left {
             -self.step_angle
         } else {
@@ -163,7 +165,6 @@ mod tests {
     #[test]
     fn test_part_one() {
         let result = part_one(&advent_of_code::template::read_file("examples", DAY));
-
         assert_eq!(result, Some(3));
     }
 
